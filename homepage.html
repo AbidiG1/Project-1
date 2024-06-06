@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+ <style>
+        .post {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .post-header {
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-bottom: 5px;
+        }
+        .post-footer {
+            margin-top: 10px;
+        }
+        .button {
+            display: inline-block;
+            padding: 5px 10px;
+            margin-right: 10px;
+            background-color: black
+            color: green;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+    </style>
+    <h3>Recent Posts</h3>
+    <div class="posts-section">
+        {% for post in homepage %}
+            <div class="post">
+                <div class="post-header">
+                    <h4>{{ post.title }}</h4>
+                    <p>by {{ post.author.username }}</p>
+                </div>
+                <div class="post-body">
+                    <p>{{ post.text }}</p>
+                </div>
+                <div class="post-footer">
+                    <a href="/edit_post/{{ post.id }}" class="button">Edit</a>
+                    <a href="/delete_post/{{ post.id }}" class="button">Delete</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <a href="/add_post" class="button">Post Something New</a>
+{% endblock %}
