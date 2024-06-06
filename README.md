@@ -101,6 +101,8 @@ from werkzeug.security import (
 
 After that you can copy and paste the code and templates into pythonanywhere and 
 make sure to press the green save button and you'll be set
+This code sets up the database tables and runs the Flask application.
+The application creates an admin user and a sample post for testing purposes.
 
 
 
