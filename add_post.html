@@ -1,0 +1,11 @@
+{% extends 'homepage.html' %}
+
+{% block content %}
+      <form action = "/add_post" method = "post">
+      <p>Enter your post here</p>
+      <textarea name="text"></textarea>
+
+      <input type = "submit" value = "submit" />
+
+      </form>
+{% endblock %}
