@@ -1,5 +1,8 @@
 This project is a very simple starter social media webiste where you can use and edit if you want to improve it. 
 So far you can register, login,create posts, edit posts, and delete posts.
+
+
+
 Post Class:
 Table Name: "posts"
 Columns:
